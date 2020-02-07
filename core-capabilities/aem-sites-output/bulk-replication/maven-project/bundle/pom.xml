@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd ">
+    <modelVersion>4.0.0</modelVersion>
+    <!-- ====================================================================== -->
+    <!-- P A R E N T P R O J E C T D E S C R I P T I O N -->
+    <!-- ====================================================================== -->
+    <parent>
+        <groupId>com.adobe.fmdita.custom</groupId>
+        <artifactId>sitesbulkreplication</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <!-- ====================================================================== -->
+    <!-- P R O J E C T D E S C R I P T I O N -->
+    <!-- ====================================================================== -->
+
+    <artifactId>sitesbulkreplication-bundle</artifactId>
+    <packaging>bundle</packaging>
+    <name>AEM FMDITA Sites Replication Workflow</name>
+
+    <dependencies>
+		<dependency>
+			<groupId>com.day.cq.dam</groupId>
+			<artifactId>cq-dam-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.day.cq</groupId>
+			<artifactId>cq-search</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.day.commons</groupId>
+			<artifactId>day-commons-text</artifactId>
+		</dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.compendium</artifactId>
+        </dependency>
+        <dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.scr.annotations</artifactId>
+	    </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>osgi.core</artifactId>
+        </dependency>
+        <dependency>
+		    <groupId>org.osgi</groupId>
+		    <artifactId>org.osgi.service.component.annotations</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.annotation</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.service.metatype.annotations</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.service.component</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-io</artifactId>
+		</dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.jcr</groupId>
+            <artifactId>jcr</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.adobe.aem</groupId>
+            <artifactId>uber-jar</artifactId>
+            <classifier>apis</classifier>
+        </dependency>
+    </dependencies>
+
+    <!-- ====================================================================== -->
+    <!-- B U I L D D E F I N I T I O N -->
+    <!-- ====================================================================== -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-scr-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>generate-scr-descriptor</id>
+                        <goals>
+                            <goal>scr</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>com.adobe.fmdita.custom.sitesbulkreplication-bundle</Bundle-SymbolicName>
+                    </instructions>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>maven-sling-plugin</artifactId>
+                <configuration>
+                    <slingUrl>http://${crx.host}:${crx.port}/apps/xmldoccustompackages/install</slingUrl>
+                    <usePut>true</usePut>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                 <configuration>
+                    <excludePackageNames>
+                        *.impl
+                    </excludePackageNames>
+                 </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
