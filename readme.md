@@ -3,8 +3,8 @@
 
 - [About](./about "Overview about XML Documentation Product")
     - [Product Documentation](./about/product-documentation "Documentation about XML Documentation")
-        - [Implementation Pre-requisites](./about/implementation_prerequisites "Pre-requisites to consider before a server is setup for XML Documentation")
-        - [Product Guides - version 3.5.0](./about/v3.5 "XML Documentation version 3.5.0 : Product Guides ")
+        - [Implementation Pre-requisites](./about/product-documentation/implementation_prerequisites "Pre-requisites to consider before a server is setup for XML Documentation")
+        - [Product Guides - version 3.5.0](./about/product-documentation/v3.5 "XML Documentation version 3.5.0 : Product Guides ")
     - [Point of contact](./about/pointofcontact)
 - [Core Capabilities](./core-capabilities "Browser each section under this to explore custom packages available for product capabilities")
     - [Content Migration](./core-capabilities/content-migration "scripts and packages available to assisnt in migration of content into XML Documentation")
