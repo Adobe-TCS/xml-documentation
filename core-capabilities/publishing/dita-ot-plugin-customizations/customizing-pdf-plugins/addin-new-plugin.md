@@ -6,7 +6,6 @@ This section will explain the process of integrating plugins to the DITA-OT pack
 
 
 In cases where a plugin needs to be added to the OT, follow steps given below:
-
 1. Install ANT on your system and add it to environment variables
 2. Make sure tools.jar is available in the java version pointed by environment variables
 3. Get the DITA-OT.zip on a local drive and unzip the archive

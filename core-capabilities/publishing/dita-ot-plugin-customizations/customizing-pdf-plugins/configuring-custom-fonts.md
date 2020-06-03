@@ -1,10 +1,10 @@
 # DITA-OT – Adding new fonts to pdf outputs
 
 
-##Step 1
+## Step 1
 Install additional fonts on machine where DITA-OT executes or whre XML Documentation is installed (On Windows , all fonts are installed under - C:\Windows\Fonts)
 
-##Step 2
+## Step 2
 Register newly added fonts in FOP configuration file, for e.g. if you want to configure font for PDF plugin in DITA-OT it can be found at DITA-OT\plugins\org.dita.pdf2.fop\cfg\fop.xconf
 	```
 	**NOTE:** in some versions of DITA-OT this file can be found at DITA-OT\plugins\org.dita.pdf2.fop\fop\conf\fop.xconf
@@ -17,7 +17,7 @@ Register newly added fonts in FOP configuration file, for e.g. if you want to co
 	</font>
 	```
 
-##Step 3
+## Step 3
 Add the font logical name into font-mapping file of the plugin, e.g. if you want to configure font for PDF plugin in DITA-OT it can be found at DITA-OT\plugins\org.dita.pdf2\cfg\fo\font-mappings.xml
 	- The **font-face** element included in each element **physical-font** having the attribute **char-set="default"** must contain the name of the font
 	```
@@ -32,7 +32,7 @@ Add the font logical name into font-mapping file of the plugin, e.g. if you want
 	</logical-font>
 	```
 
-##Step 4
+## Step 4
 Make changes to the XSL transformation to render the new font, e.g it can be found at this path, if not you can create one such file: DITA-OT\plugins\org.dita.pdf2\cfg\fo\xsl\custom.xsl.
 Add below entry to overwrite the font family . The below example making sure to use 'Gotham' as a font-family.
 	```
