@@ -46,12 +46,15 @@ Add the font logical name into font-mapping file of the plugin, e.g. if you want
 **_NOTE_**: If no alias mapping is found for a font-family specified in the XSLT stylesheets, the processing defaults to **Helvetica**.
 
 ## Step 4
-Make changes to the XSL transformation to render the new font, e.g it can be found at this path, if not you can create one such file: DITA_OT_DIR\plugins\org.dita.pdf2\cfg\fo\xsl\custom.xsl. 
-The font-family is defined to be Gotham, but Gotham is just an alias. It is not a physical font name.
+Make changes to the XSL transformation to use new font, the file which this change is made can be found at this path (if not you can create one such file): DITA_OT_DIR\plugins\org.dita.pdf2\cfg\fo\xsl\custom.xsl. 
+The font-family is defined in this example is Gotham (refer Step 3), note that we are using the alias Gotham as defined in font-mappings.xml, it is not a physical font name.
 
-Add below entry in the plugin FO to overwrite the font family. 
+So, to use one of the custom fonts use the alias name and add below entry in the plugin FO to use the font family. 
 ```
 <xsl:attribute-set name="__fo__root">
 	<xsl:attribute name="font-family">Gotham</xsl:attribute>
 </xsl:attribute-set>
 ```
+
+
+After this you can recompile DITA-OT and upload it to the XML Documentation system and test to see the output.
