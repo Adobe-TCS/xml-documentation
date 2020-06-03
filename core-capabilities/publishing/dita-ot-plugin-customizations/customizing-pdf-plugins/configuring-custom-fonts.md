@@ -11,7 +11,7 @@ Install additional fonts on machine where DITA-OT executes or where XML Document
 Register newly added fonts in FOP configuration file, for e.g. if you want to configure font for PDF plugin in DITA-OT it can be found at DITA_OT_DIR\plugins\org.dita.pdf2.fop\cfg\fop.xconf
 
 
-	**_NOTE:_** in some versions of DITA-OT this file can be found at DITA_OT_DIR\plugins\org.dita.pdf2.fop\fop\conf\fop.xconf
+**_NOTE:_** in some versions of DITA-OT this file can be found at DITA_OT_DIR\plugins\org.dita.pdf2.fop\fop\conf\fop.xconf
 	
 - An element font must be inserted in the **<fonts>** element, that exist under renderer element with attribute mime="application/pdf". 
 - Add below entry for each font that you want to enable by inserting this snippet between **<fonts>** and **<auto-detect/>** nodes defined in this file
@@ -40,7 +40,7 @@ Add the font logical name into font-mapping file of the plugin, e.g. if you want
 		</physical-font>
 	</logical-font>
 
-	**_NOTE_**: If no alias mapping is found for a font-family specified in the XSLT stylesheets, the processing defaults to **Helvetica**.
+**_NOTE_**: If no alias mapping is found for a font-family specified in the XSLT stylesheets, the processing defaults to **Helvetica**.
 
 ## Step 4
 Make changes to the XSL transformation to render the new font, e.g it can be found at this path, if not you can create one such file: DITA_OT_DIR\plugins\org.dita.pdf2\cfg\fo\xsl\custom.xsl. 
