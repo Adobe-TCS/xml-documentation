@@ -67,3 +67,8 @@ In addition, make sure the following configurations are tuned as per the environ
 2. Replication agent configs 
 	- Replication Agent Name Prefix Pattern: Pattern for replication agent name prefix, the chosen assets will be replicated to agents whose name starts with this string
 	- Flush Agent Name Prefix Pattern: Pattern for flush agent name prefix, cache for the chosen asset root will be flushed using the agents whose name starts with this string
+
+
+DISCLAIMER
+------------
+This implementation is a sample codebase, and should be validated for features by implementation team and be quality tested by QE team before it is deployed to production.
