@@ -20,7 +20,7 @@ How to Deploy?
 Code References:
 ========
 1) Adding a button in webeditor toolbar
-	- Refer ui_config.json provided under generated-packages and search for below snippet.
+	- Refer ui_config.json provided under generated-packages and search for below snippet. It adds an alert button with title as 'Click here' in toolbar. It also registers an on-click event with the key as 'custom.alert'.
 		{
 		  "type": "button",
 		  "icon": "alert",
@@ -28,13 +28,16 @@ Code References:
 		  "title": "Click here",
 		  "on-click": "custom.alert"
         }
-	- It adds an alert button with title as 'Click here' in toolbar. The action for 'on-click' event is registered with 'custom.alert' key which has been defined in "/apps/fmdita/custom/clientlib/js/custom.js". This js is a part of the sample-js-for-customization.zip package provided under generated-packages
-	
-	![XML Edior](./images/XML-Editor-button.png)
+		
+		![XML Edior](./images/XML-Editor-button.png)
+		
+2) Defining action on click of the button
+	- Refer /apps/fmdita/custom/clientlib/js/custom.js. The action for 'on-click' event is defined in "/apps/fmdita/custom/clientlib/js/custom.js". This is having logic to show alert to the user on click.
+	- This js is a part of the sample-js-for-customization.zip package provided under generated-packages
 	
 	![XML Edior](./images/Alert.png)
 	
-2) Making changes in webeditor author/preview mode to show title in Red color
+3) Making changes in webeditor author/preview mode to show title in Red color
 	- Refer css_layout.css provided under generated-packages. It has the corresponding css defined for showing the title in Red color.
 		
 	![XML Edior](./images/XML-Editor-Title.png)
