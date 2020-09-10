@@ -18,7 +18,8 @@ How to Deploy?
 2) Create a custom Folder profile by login on to AEM 
 	- Navigate to Tools-->XML Documentation-->Folder Profiles
 	![XML Edior](./pictures/Folder-Profiles.png)
-	- Create a new Profile and add a folder path
+	- Create a new Profile and add a folder path        
+	
 	![XML Edior](./pictures/CreateNewFolder-Profiles.png)	
 	- Go to the XML Editor Configuration and update the ui_config.json and css_layout.css as provided under generated-packages folder
 	![XML Edior](./pictures/Folder-Profiles-Add.png)
