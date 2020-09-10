@@ -5,7 +5,7 @@ Examples in this package:
 
 How to Deploy?
 ========
-1) Download the sample-js-for-customization.zip package from generated-packages folder and install it via CRX package manager
+1) Download the sample-js-for-customization.zip package from [generated-packages](./generated-packages) folder and install it via CRX package manager
 	- This will add the sample js code under /apps/fmdita/custom
 2) Create a custom Folder profile by login on to AEM 
 	- Navigate to Tools-->XML Documentation-->Folder Profiles
@@ -14,13 +14,13 @@ How to Deploy?
 	- Create a new Profile and add a folder path        
 	![XML Edior](./images/CreateNewFolder-Profiles.png)	
 	
-	- Go to the XML Editor Configuration and update the ui_config.json and css_layout.css as provided under generated-packages folder
+	- Go to the XML Editor Configuration and update the ui_config.json and css_layout.css as provided under [generated-packages](./generated-packages) folder
 	![XML Edior](./images/Folder-Profiles-Add.png)
 
 Code References:
 ========
 1) Adding a button in webeditor toolbar
-	- Refer ui_config.json provided under generated-packages and search for below snippet. It adds an alert button with title as 'Click here' in toolbar. It also registers an on-click event with the key as 'custom.alert'.
+	- Refer ui_config.json provided under [generated-packages](./generated-packages) and search for below snippet. It adds an alert button with title as 'Click here' in toolbar. It also registers an on-click event with the key as 'custom.alert'.
 		{
 		  "type": "button",
 		  "icon": "alert",
@@ -33,12 +33,12 @@ Code References:
 		
 2) Defining action on click of the button
 	- Refer /apps/fmdita/custom/clientlib/js/custom.js. The action for 'on-click' event is defined in "/apps/fmdita/custom/clientlib/js/custom.js". This is having logic to show alert to the user on click.
-	- This js is a part of the sample-js-for-customization.zip package provided under generated-packages
+	- This js is a part of the sample-js-for-customization.zip package provided under [generated-packages](./generated-packages)
 	
 	![XML Edior](./images/Alert.png)
 	
 3) Making changes in webeditor author/preview mode to show title in Red color
-	- Refer css_layout.css provided under generated-packages. It has the corresponding css defined for showing the title in Red color.
+	- Refer css_layout.css provided under [generated-packages](./generated-packages). It has the corresponding css defined for showing the title in Red color.
 		
 	![XML Edior](./images/XML-Editor-Title.png)
 	
