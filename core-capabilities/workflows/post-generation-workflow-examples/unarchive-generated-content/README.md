@@ -37,6 +37,6 @@ How to Test?
 
 Generating output and exporting the content
 -------------------------------------------
-Generate the HTML5 output and you should get the zip file downloaded to destination location as mentioned in workflow step, and this process will also unzip the contents to the same destination location
+Generate the HTML5 output and you should get the zip file downloaded to destination location as mentioned in workflow step, and this process will also unzip the contents to the same destination location. If you are generating a PDF file then the PDF will be downloaded to target location as-is
 
 

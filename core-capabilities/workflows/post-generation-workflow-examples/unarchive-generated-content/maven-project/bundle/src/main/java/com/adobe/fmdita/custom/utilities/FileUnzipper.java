@@ -1,12 +1,8 @@
-package com.aem.fmdita.utilities;
+package com.adobe.fmdita.custom.utilities;
 
-/*
-XML Documentation for AEM
-Copyright 2020 Adobe Systems Incorporated
+//— Here is a fix so that is creates when there are sub-directories .. this creates if needed
+//Note: If you had run it before, remove the existing files because there may be a blank file holding the spot of the directory
 
-This software is licensed under the Apache License, Version 2.0 (see
-LICENSE file).
-*/
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

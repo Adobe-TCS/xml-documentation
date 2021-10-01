@@ -1,12 +1,4 @@
-package com.aem.fmdita.service.impl;
-
-/*
-XML Documentation for AEM
-Copyright 2020 Adobe Systems Incorporated
-
-This software is licensed under the Apache License, Version 2.0 (see
-LICENSE file).
-*/
+package com.adobe.fmdita.custom.service.impl;
 
 import javax.jcr.Session;
 
@@ -19,8 +11,8 @@ import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.adobe.fmdita.custom.service.AssetService;
 import com.adobe.granite.asset.api.AssetManager;
-import com.aem.fmdita.service.AssetService;
 
 //This is a component so it can provide or consume services
 @Component

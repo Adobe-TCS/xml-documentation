@@ -1,12 +1,4 @@
-package com.aem.fmdita.workflow.customsteps;
-
-/*
-XML Documentation for AEM
-Copyright 2020 Adobe Systems Incorporated
-
-This software is licensed under the Apache License, Version 2.0 (see
-LICENSE file).
-*/
+package com.adobe.fmdita.custom.workflow.customsteps;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -31,15 +23,14 @@ import org.osgi.framework.Constants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.adobe.fmdita.custom.service.AssetService;
+import com.adobe.fmdita.custom.utilities.FileUnzipper;
 import com.adobe.granite.workflow.WorkflowException;
 import com.adobe.granite.workflow.WorkflowSession;
 import com.adobe.granite.workflow.exec.WorkItem;
 import com.adobe.granite.workflow.exec.WorkflowData;
 import com.adobe.granite.workflow.exec.WorkflowProcess;
 import com.adobe.granite.workflow.metadata.MetaDataMap;
-import com.aem.fmdita.service.AssetService;
-import com.aem.fmdita.utilities.FileUnzipper;
-import com.day.cq.workflow.WorkflowService;
 
 @Component
 
@@ -51,9 +42,6 @@ import com.day.cq.workflow.WorkflowService;
 
 public class ZipFileHandleStep implements WorkflowProcess {
 
-	@Reference
-	private WorkflowService workflowService;
-	
 	@Reference
 	private AssetService assetService;
 
@@ -123,14 +111,19 @@ public class ZipFileHandleStep implements WorkflowProcess {
 			if (actions.contains(FILE_ACTION_UNZIP)) {
 				//First Download the file to network file location
 				if(downloadAssetToFileSystem(srcPath, dstPath, session)) {
-					// Unzip only if file is downloaded to filesystem
-					log.info("Unzip to file destination location: {}", dstPath);
 					
-					String fileSrc = dstPath + File.separator + zipFileName;
-					String subfolderName = zipFileName.substring(0,zipFileName.indexOf("."));
-					String filedst = dstPath + "\\" + subfolderName;
-					log.info("Unzip to file source location: {}, filename: {}", filedst , zipFileName);
-					FileUnzipper.unZipIt(fileSrc, filedst);
+					// Check file extension and unzip only if it was a zip file 
+					if(srcPath.endsWith(".zip")) {
+						// Unzip only if file is downloaded to filesystem
+						log.info("Unzip to file destination location: {}", dstPath);
+						
+						String fileSrc = dstPath + File.separator + zipFileName;
+						String subfolderName = zipFileName.substring(0,zipFileName.indexOf("."));
+						String filedst = dstPath + "\\" + subfolderName;
+						log.info("Unzip to file source location: {}, filename: {}", filedst , zipFileName);
+						FileUnzipper.unZipIt(fileSrc, filedst);
+					}
+					
 				}
 			}
 		} else {
@@ -143,7 +136,7 @@ public class ZipFileHandleStep implements WorkflowProcess {
 		log.info("SrcPath: {}, DestinationPath: {}", srcPath, dstPath);
 		try {
 			fileNode = session.getNode(srcPath);
-			Node jcrContent = fileNode.getNode("jcr:content");
+			Node jcrContent = fileNode.getNode("jcr:content/renditions/original/jcr:content");
 			String fileName = fileNode.getName();
 			InputStream content = jcrContent.getProperty("jcr:data").getStream();
 			File newFile = new File(dstPath + File.separator + fileName);
